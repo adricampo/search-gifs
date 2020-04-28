@@ -1,15 +1,25 @@
 import Vue from 'vue'
-import App from './App.vue'
 import VueRouter from 'vue-router'
-import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.min.css'
-import 'vue-material/dist/theme/default.css'
+import App from './App.vue'
+import BestGifs from './components/BestGifs/BestGifs.vue'
+import Header from './components/Header/Header.vue'
+import SearchForm from './components/SearchForm/SearchForm.vue'
 
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
-Vue.use(VueMaterial)
+
+const router = new VueRouter({
+  mode: 'history',
+  routes: [{
+    path: '/',
+    name: 'gif',
+    components: [App, BestGifs, Header, SearchForm],
+    props: true
+  }]
+})
 
 new Vue({
   render: h => h(App),
+  router
 }).$mount('#app')

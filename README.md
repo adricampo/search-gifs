@@ -1,4 +1,4 @@
-# the-ultimate-gif
+# GIFme
 
 ## Project setup
 ```

@@ -1,44 +1,54 @@
 <template>
-  <div id="app" class="app">
+  <div id="app" class="app" @showGifs="gifs">
     <Header />
-    <img width="300px" alt="Vue logo" src="./assets/gif-logo.gif">
-    <SearchForm />
+    <img width="250px" alt="Vue logo" src="./assets/gif-logo.gif" />
+    <SearchForm @retrieveGifs="gifsList" />
     <BestGifs />
-
+    <Results :gifs="gifs" />
   </div>
 </template>
 
 <script>
-import Header from './components/Header/Header'
-import SearchForm from './components/SearchForm/SearchForm'
-import BestGifs from './components/BestGifs/BestGifs.vue'
+import Header from "./components/Header/Header";
+import SearchForm from "./components/SearchForm/SearchForm";
+import Results from "./components/Results/Results"
+import BestGifs from "./components/BestGifs/BestGifs";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Header,
     SearchForm,
+    Results,
     BestGifs
+  },
+  data () {
+    return {
+      gifs: []
+    }
   },
   methods: {
     //call to API to get data
-    async getGifs() {
+    async gifsList(queryInput) {
       try {
         const response = await fetch(
-          "https://api.giphy.com/v1/gifs/search?api_key=n3bZe4akFHmonoAyeLs5KLeeHGwU2xw7&q=panda&limit=25&offset=0&rating=G&lang=en"
+          `https://api.giphy.com/v1/gifs/search?api_key=n3bZe4akFHmonoAyeLs5KLeeHGwU2xw7&q=${queryInput}&limit=25&offset=0&rating=G&lang=en`
         );
         const result = await response.json();
+        const gifs = result.data
 
-        return result;
+        this.gifs = gifs;
+        this.$emit('showGifs', gifs)
       } catch (error) {
-        throw new Error ('something went wrong..')
+        throw new Error("something went wrong..");
       }
     },
-  }
+  
+  },
 }
-
+  
 </script>
 
 <style lang="sass">
-  @import 'App.sass'
+@import 'App.sass'
 </style>

@@ -1,10 +1,22 @@
 <template>
   <div class="search">
     <div class="search__container container">
-      <form class="container__form form">
+      <form
+        @submit.prevent="onSubmit"
+        class="container__form form" 
+        >
         <div class="form__box box">
-          <input class="box__criteria" type="text" name="query" placeholder="type something" />
-          <button class="box__button">🔍</button>
+          <input 
+            class="box__criteria" 
+            type="text" 
+            id="queryInput" 
+            v-model="queryInput"
+            placeholder="type something" />
+          <button 
+            class="box__button"
+            type="submit" 
+            value="Submit"
+          >🔍</button>
         </div>
       </form>
     </div>
@@ -13,7 +25,15 @@
 
 <script>
 export default {
-  name: "SearchForm"
+  name: "SearchForm",
+  methods: {
+    onSubmit() {
+      let queryInput = this.queryInput
+      this.$emit("retrieveGifs", queryInput)
+      this.queryInput = null
+    },
+    
+  }
 };
 </script> 
 

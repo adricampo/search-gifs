@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <h1 class="header__title">👉🏻 theUltimateGifSearch 👈🏻</h1>
+        <h1 class="header__title">THE ULTIMATE GIF SEARCH</h1>
     </div>
 </template>
 
