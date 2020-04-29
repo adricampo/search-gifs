@@ -1,6 +1,6 @@
 # Gifs_Search
 
-## Deploy link: [gifs_search] (https://search-gifs.netlify.app)
+## Deploy link: [gifs_search](https://search-gifs.netlify.app)
 
 ## Project Main Goals 
 
