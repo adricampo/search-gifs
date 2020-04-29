@@ -2,15 +2,36 @@
     <div class="best-gifs">
         <h2 class="title">Los más buscados 🔥</h2>
         <ul class="best-gifs__list list">
-            <li class="item"><a href="https://vuejs.org" target="_blank" rel="noopener">Gifs de futbol</a></li>
-            <li class="item"><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Gifs de animales</a></li>
-            <li class="item"><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Gifs de trump</a></li>        </ul>
+            <li class="item" @click="onClick1()">Gifs de futbol</li>
+            <li class="item" @click="onClick2()">Gifs de animales</li>
+            <li class="item" @click="onClick3()">Gifs de trump</li>
+        </ul>
     </div>
 </template>
 
 <script>
 export default {
-    name: "BestGifs"
+    name: "BestGifs",
+    methods: {
+        onClick1(){
+            let queryInput = "futbol"
+            this.$emit("retrieveTopGifs1", queryInput)
+            this.queryInput = null
+        },
+        onClick2(){
+            let queryInput = "animales"
+            this.$emit("retrieveTopGifs2", queryInput)
+            this.queryInput = null
+        },
+        onClick3(){
+            let queryInput = "trump"
+            this.$emit("retrieveTopGifs3", queryInput)
+            this.queryInput = null
+        },
+
+
+    }
+    
 }
 </script>
 

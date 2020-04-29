@@ -3,7 +3,7 @@
     <Header />
     <img width="250px" alt="Vue logo" src="./assets/gif-logo.gif" />
     <SearchForm @retrieveGifs="gifsList" />
-    <BestGifs />
+    <BestGifs @retrieveTopGifs1="gifsList" @retrieveTopGifs2="gifsList" @retrieveTopGifs3="gifsList" />
     <Results :gifs="gifs" />
   </div>
 </template>
@@ -45,6 +45,7 @@ export default {
     },
   
   },
+
 }
   
 </script>
