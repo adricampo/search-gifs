@@ -1,4 +1,5 @@
-# Gifs_Search
+# Gifs Search
+### Small personal project to practice with the Vue framework 
 
 ## Deploy link: [gifs_search](https://search-gifs.netlify.app)
 
