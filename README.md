@@ -8,7 +8,7 @@ Small personal project to practice with the Vue framework
 - First one, and the most important is that I have had the possibility to work with a completely new framework: Vue.
 - Create a search var where introduce a text to look for gifs.
 - The gifs come from an external API, provided by Giphy.
-- Results are listed in a grid and each result is a link that goes to the original Giphy page to take the url of the gif or other info you want. 
+- Results are listed in a grid and each result is a link that goes to the original Giphy page to take the url of the gif or other additional information. 
 
 
 ## Functional Description
